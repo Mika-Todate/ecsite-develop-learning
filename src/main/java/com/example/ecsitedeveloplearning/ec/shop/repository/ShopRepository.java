@@ -17,6 +17,6 @@ interface ShopRepository extends JpaRepository<Account,Long>{
 	@Query("SELECT * FROM　categories")
 	List<Category>categories();
 	
-	@Query("SELECT * FROM　puroducts")
+	@Query("SELECT * FROM　products")
 	List<Product>products();
 }

@@ -14,7 +14,7 @@ public interface AccountRepository extends JpaRepository<Account,Long>{
 	// ここはDBに Access するためのRepositoryです。
 	// JPaを extendsして設定する必要があります。
 	
-	@Query("SELECT * FROM accounts")
-		List<Account>findAll();
+//	@Query("SELECT * FROM accounts")
+//		List<Account>findAll();
 
 }

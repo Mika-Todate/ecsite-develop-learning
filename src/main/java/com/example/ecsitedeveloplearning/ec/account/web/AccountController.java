@@ -13,6 +13,7 @@ import com.example.ecsitedeveloplearning.ec.account.model.Account;
 import com.example.ecsitedeveloplearning.ec.account.service.AccountService;
 
 @Controller
+
 @RequestMapping(path="/account")
 public class AccountController {
 	
