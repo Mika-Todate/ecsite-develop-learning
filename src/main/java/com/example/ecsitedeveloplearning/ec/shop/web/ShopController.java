@@ -19,16 +19,17 @@ import com.example.ecsitedeveloplearning.ec.shop.model.Product;
 import com.example.ecsitedeveloplearning.ec.shop.service.ShopService;
 
 @Controller
-@RequestMapping(path="/shop")
+
+@RequestMapping(path="/shop")  //URL(/shop)が指定されるとShopControllerにあるメソッドが呼び出される
 public class ShopController {
 	
-	@Autowired
+	@Autowired  //インスタンスを自動でnewしてくれる
 	private ShopService shopService;
 	
-	@Value("${upload.image.path}")
+	@Value("${upload.image.path}")  //プロパティファイルの設定値を代入できる
 	private String uploadImagePath;
 	
-	// Top Page
+//	 Top Page
 //	@GetMapping("/top")
 //	public String viewIndex() {
 //		System.out.println("viewIndex");
@@ -37,18 +38,18 @@ public class ShopController {
 	
 	//TOP画面
 	@GetMapping("/top")
-	public ModelAndView viewTop() {
-		ModelAndView mv = new ModelAndView("shop/top");
-		List<Product>products = shopService.findAllByCategory(1);
-		List<Category>categories = shopService.findCategories();
-		mv.addObject("categories",categories);
-		mv.addObject("products",products);
-		return mv;
+	public String viewTop() {
+//		ModelAndView mv = new ModelAndView("shop/top");
+//		List<Product>products = shopService.findAllByCategory(1);
+//		List<Category>categories = shopService.findCategories();
+//		mv.addObject("categories",categories);
+//		mv.addObject("products",products);
+		return "shop/top";
 	}
 	
 	//TOP画面
 	@GetMapping("/top/{categoryId}")
-	public ModelAndView viewToopByCategory(@PathVariable int categoryId) {
+	public ModelAndView viewTopByCategory(@PathVariable int categoryId) {
 		ModelAndView mv = new ModelAndView("shop/top");
 		List<Product>products = shopService.findAllByCategory(categoryId);
 		List<Category>categories = shopService.findCategories();

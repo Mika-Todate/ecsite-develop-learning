@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	
 
 	<groupId>com.example</groupId>
 	<artifactId>ecsite-develop-learning</artifactId>
@@ -12,6 +13,7 @@
 	<name>ecsite-develop-learning</name>
 	<description>Demo project for Spring Boot</description>
 
+	<!-- Spring Boot の利用を宣言し、バージョンを指定【追加】 -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -30,6 +32,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+		
+		<!-- Spring Boot の Web アプリケーションライブラリの利用を指定【追加】 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -47,6 +51,12 @@
 			<artifactId>spring-boot-configuration-processor</artifactId>
 			<optional>true</optional>
 		</dependency>
+		
+		<dependency>
+    		<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			</dependency>
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -71,6 +81,7 @@
 		
 	</dependencies>
 
+	<!-- Spring Boot の ビルド用 Maven プラグイン【追加】 -->
 	<build>
 		<plugins>
 			<plugin>
@@ -82,3 +93,4 @@
 
 
 </project>
+
